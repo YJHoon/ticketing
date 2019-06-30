@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content%}
+    <h1>영화 예매</h1><br>
+     
+    <form action="{% url 'create' %}" method="POST">
+        
+      {% csrf_token %}
+      <h3>영화</h3><br>
+      <input type="radio" name='title' value="어벤져스">어벤져스<br>
+      <input type="radio" name='title' value="어스">어스<br>
+      <input type="radio" name='title' value="샤잠">샤잠<br>
+      <input type="radio" name='title' value="그 외">그 외<br><br><br>
+
+<!--        <form>
+        <input type="date" name="day" max="2019-04-30" min="2019-04-09"><br>
+        
+      </form>-->
+  
+      <h3>시간선택</h3>
+      <p style="color:red;">영화 상영 시간은 3시간이고, 극장 운영 시간은 08:00 ~ 23:00까지입니다.</p>
+      <input type="time" name="time" max="23:00" min="08:00" step="10800" method="select()"><br><br><br>
+      
+
+      <h3>좌석 선택</h3>
+      <p style="color:red;">좌석은 하나만 선택해주세요. ^^</p>
+      
+      <div style="display:card; background-color:black"></div>
+      
+      <table >
+        <tr>
+          {% for index in loop_range %}
+              <th style="background:#ececec;">{{ index }}</th>
+          {% endfor %}
+        </tr>
+        {% for alphabet in loop_alphabets %}
+        <tr>
+          {% for index in loop_range %}
+            <td style="width:40px"><input type="checkbox" name="seat{{ index }}-{{ alphabet }}"></td>
+          {% endfor %}
+          <td style="background:#ececec;">{{ alphabet }}</td>
+        </tr>
+        {% endfor %}
+      </table><br>
+      <p style="color:red;">선택 안하고 넘어가면 에러뜹니다. 경고했어요 ^^</p>
+      <input type="submit" value="결정">
+      <br><br><br><br>
+
+
+    </form>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+    <p>영화 추가</p>
+    <form action="{% url 'movie'%}" method="POST">
+        
+        {% csrf_token %}
+        <label>영화이름</label><br>
+        <input type="text" name='title'><br><br>
+        
+        
+        <label>시간</label><br>
+        <input type="text" name="time"> <br><br>
+        
+        <label>좌석</label><br>
+        <textarea name="seat"></textarea><br>
+        
+        <input type="submit" class="btn btn-primary" value="등록">
+    </form>
+
+{% endblock %}

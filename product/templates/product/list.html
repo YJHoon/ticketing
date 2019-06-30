@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+  <h1>예매 현황</h1>
+  <div class="row">
+  {% for item in product %}
+    <div class="column">
+      <div class="card">
+        <h5 class="card-title">{{ item.title }}</h5>
+        <h5 class="card-subtitle">{{ item.time }}</h5>
+        <p class="card-text">{{ item.seat }}</p>
+        <img src = "{% static 'image/images.jpg' %}" style="height:200px; width:200px; top: 30%;">
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+  <br><br><br>
+  <div style="text-align:center;">
+    <a href="{% url 'kind' %}" class="btn btn-primary">영화 목록보기</a>
+    <a href="{% url 'create' %}" class="btn btn-primary">추가 예매하기</a><br><br><br><br><br><br>
+  </div>
+  <a href="{% url 'update' post.pk %}">수정</a><br>
+  
+  
+{% endblock %}

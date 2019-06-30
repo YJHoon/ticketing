@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <h1>영화종류</h1>
+ <!--   {% for item in movie %}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{item.title}}</h5>
+        <h5 class="card-subtitle">{{item.time}}</h5>
+      </div>
+    </div>
+    
+    {% endfor %} -->
+
+  
+ 
+  
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <h3>어벤져스</h3>
+        <img src="{% static 'image/어벤져스.jpg' %}" class="movimg">
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <h3>어스</h3>
+        <img src="{% static 'image/어스.jpg' %}" class="movimg">
+      </div>
+    </div>
+    
+    <div class="column">
+      <div class="card">
+        <h3>샤잠</h3>
+        <img src="{% static 'image/샤잠.jpg' %}" class="movimg">
+      </div>
+    </div>
+    
+    <div class="column">
+      <div class="card">
+        <h3>그 외 영화</h3>
+        <img src="{% static 'image/벽돌.jpg' %}" class="movimg">
+      </div>
+    </div>
+  </div>
+<br><br><br>
+  <button class="btn-2" onclick=location.href="{% url 'create' %}">예매하기</button><br><br>
+ 
+{% endblock %}

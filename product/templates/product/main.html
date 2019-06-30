@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<h1><big><big>멋사 극장</big></big></h1><br>
+    <h1>멋사 극장에 오신것을 환영합니다.</h1>
+    <h4>세상에서 가장 아름다운 '미'가 어떤 것인지 아십니까?</h4>
+    <h4>바로 여백의 '미'입니다. 아름다운 여백으로 가득한 이곳에서 영화 예매하세요.</h4><br><br>
+    
+    
+    <h1><ul>참고로 저희 극장이 이렇습니다.</ul></h1>
+    
+    <h3><li>당일 상영하는 영화만 예매 받고 있어요.</li></h3>
+    
+    <h3><li>팝콘 안 팔아요</li></h3><br>
+        <img src = "{% static 'image/팝x.png'%}" style="width:700px; height:400px;"><br><br><br>
+    
+    <h3><li>극장도 1개에요.</li></h3><br>
+        <img src = "{% static 'image/상1.png'%}" style="width:700px; height:400px;"><br><br><br>
+    <h3><li>영화도 3개 밖에 없어요. 원하시는 영화 있으면 나중에 추가 해줄게요. 돈 안드니까</li></h3><br>
+        <img src = "{% static 'image/123.jpg'%}" style="width:700px; height:400px;"><br><br><br>
+        
+ <button class="btn-2" onclick=location.href="{% url 'kind' %}" style="position:left; margin:left;">영화 보러가기</button>
+ 
+
+{% endblock%}
